@@ -1,8 +1,9 @@
+import tailwindcssTypography from '@tailwindcss/typography';
 import tailwindcssPrimeui from 'tailwindcss-primeui';
 
 export default {
-    plugins: [tailwindcssPrimeui],
-    darkMode: ['class'],
+    plugins: [tailwindcssPrimeui, tailwindcssTypography],
+    darkMode: ['selector', '[class="dark"]'],
     safelist: ['dark'],
     prefix: '',
 

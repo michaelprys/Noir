@@ -7,13 +7,40 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', 'SF Pro', 'Open Sans', Candara;
+    font-family: 'SF Pro', 'Open Sans', Candara;
+    background-color: var(--p-primary-400);
+    color: var(--p-primary-600);
     font-size: clamp(0.938rem, 0.8873rem + 0.1503vw, 1rem);
 }
+.dark body {
+    background-color: var(--p-primary-950);
+    color: var(--p-primary-400);
+}
 
-ul,
-li {
-    list-style: none;
+blockquote {
+    border-left: 5px solid var(--p-primary-500);
+    font-style: italic;
+}
+.dark blockquote {
+    border-left: 5px solid var(--p-primary-600);
+    font-style: italic;
+}
+
+::-moz-selection {
+    color: var(--p-primary-300);
+    background: #1c3651;
+}
+::selection {
+    color: var(--p-primary-300);
+    background: #1c3651;
+}
+.dark ::-moz-selection {
+    color: var(--p-primary-300);
+    background: #1c3651;
+}
+.dark ::selection {
+    color: var(--p-primary-300);
+    background: #1c3651;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27,4 +54,15 @@ li {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
 }
